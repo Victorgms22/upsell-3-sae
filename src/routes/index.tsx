@@ -54,7 +54,7 @@ const garantia = [
   { icon: Download, t: "Acesso digital", d: "Receba as instruções de acesso após a confirmação do pagamento." },
   { icon: Headset, t: "Suporte", d: "Orientações para acessar seu material." },
 ];
-const faq = [
+const faq: [string, string][] = [
   ["Como vou receber o material?", "Após a confirmação do pagamento, você receberá as orientações de acesso ao material digital."],
   ["O material é físico ou digital?", "O material é 100% digital e pode ser acessado em dispositivos compatíveis."],
   ["Posso acessar pelo celular?", "Sim! Você poderá acessar pelo celular, tablet ou computador."],

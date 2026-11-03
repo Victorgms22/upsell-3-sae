@@ -8,8 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import hero from "@/assets/hero-mockup.jpg";
 import combo from "@/assets/combo-mockup.jpg";
 
-// Troque pelo link real da plataforma de checkout
-const CHECKOUT_URL = "#oferta";
+const CHECKOUT_URL = "https://pay.cakto.com.br/hwnhc4g";
 
 export const Route = createFileRoute("/")({
   head: () => ({

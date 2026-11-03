@@ -63,19 +63,34 @@ const faq: [string, string][] = [
   ["Vou receber atualizações?", "As condições de atualização devem seguir o que estiver previsto na oferta do produto."],
 ];
 
+const LINK_RECUSA = "https://farmaplicada.lovable.app";
+
 function Cta({ children, href = "#oferta" }: { children: string; href?: string }) {
   return (
-    <Button asChild variant="cta" size="xl">
+    <Button asChild variant="cta" size="xl" className="w-full sm:w-auto">
       <a href={href}>{children}</a>
     </Button>
   );
 }
 
+function Recusa({ dark }: { dark?: boolean }) {
+  return (
+    <a
+      href={LINK_RECUSA}
+      className={`mt-4 inline-block text-sm underline underline-offset-4 transition-colors ${
+        dark ? "text-primary-foreground/60 hover:text-primary-foreground" : "text-muted-foreground hover:text-primary"
+      }`}
+    >
+      Não aceito essa oferta
+    </a>
+  );
+}
+
 function Heading({ title, sub, light }: { title: string; sub?: string; light?: boolean }) {
   return (
-    <div className="mx-auto mb-12 max-w-2xl text-center">
-      <h2 className={`text-3xl font-bold md:text-4xl ${light ? "text-primary-foreground" : "text-primary"}`}>{title}</h2>
-      {sub && <p className={`mt-4 text-lg ${light ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{sub}</p>}
+    <div className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
+      <h2 className={`text-2xl font-bold sm:text-3xl md:text-4xl ${light ? "text-primary-foreground" : "text-primary"}`}>{title}</h2>
+      {sub && <p className={`mt-3 text-base sm:text-lg md:mt-4 ${light ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{sub}</p>}
     </div>
   );
 }
@@ -101,12 +116,12 @@ function Index() {
   return (
     <main>
       <section className="bg-hero text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-14 md:grid-cols-2 md:py-28">
           <div className="fade-up">
             <span className="inline-block rounded-full border border-accent/50 bg-accent/15 px-4 py-1.5 text-xs font-semibold tracking-widest text-accent">
               + MATERIAL COMPLETO PARA ENFERMAGEM
             </span>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight md:text-5xl">
+            <h1 className="mt-6 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
               Domine a SAE e as Anotações de Enfermagem com <span className="text-accent">muito mais segurança!</span>
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/85">
@@ -121,7 +136,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading title="O que você vai receber?" sub="Um conteúdo organizado para ajudar você a compreender e aplicar os principais processos da assistência de enfermagem." />
           <CardGrid items={conteudo} cols="lg:grid-cols-3" />
@@ -129,21 +144,21 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-soft px-6 py-20">
+      <section className="bg-soft px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading title="Por que estudar com este material?" sub="Mais organização, praticidade e segurança para desenvolver seus conhecimentos em enfermagem." />
           <CardGrid items={beneficios} cols="lg:grid-cols-4" />
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading title="Para quem é este material?" sub="Desenvolvido para quem deseja aprender, revisar e aprimorar seus conhecimentos em enfermagem." />
           <CardGrid items={publico} cols="lg:grid-cols-3" />
         </div>
       </section>
 
-      <section id="oferta" className="bg-hero px-6 py-20 text-primary-foreground">
+      <section id="oferta" className="bg-hero px-4 py-14 text-primary-foreground sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading light title="Tenha acesso ao material completo!" sub="Tudo o que você precisa para estudar SAE e Anotações de Enfermagem em um só lugar." />
           <div className="grid items-center gap-10 md:grid-cols-2">
@@ -163,23 +178,26 @@ function Index() {
               </ul>
               <div className="mt-8 border-t pt-6 text-center">
                 <p className="text-muted-foreground line-through">De R$ 59,90</p>
-                <p className="font-display text-5xl font-extrabold text-primary">R$ 12,90</p>
+                <p className="font-display text-4xl font-extrabold text-primary sm:text-5xl">R$ 12,90</p>
                 <p className="mt-1 text-sm text-muted-foreground">Pagamento único</p>
-                <div className="mt-6"><Cta href={CHECKOUT_URL}>QUERO ACESSAR O COMBO AGORA</Cta></div>
+                <div className="mt-6 flex flex-col items-center">
+                  <Cta href={CHECKOUT_URL}>QUERO ACESSAR O COMBO AGORA</Cta>
+                  <Recusa />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-14 md:py-20">
         <div className="mx-auto max-w-5xl">
           <Heading title="Sua compra com tranquilidade" />
           <CardGrid items={garantia} cols="lg:grid-cols-3" />
         </div>
       </section>
 
-      <section className="px-6 pb-20">
+      <section className="px-6 pb-14 md:pb-20">
         <div className="mx-auto max-w-3xl">
           <Heading title="Dúvidas frequentes" />
           <Accordion type="single" collapsible className="space-y-3">
@@ -193,11 +211,14 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-hero px-6 py-20 text-center text-primary-foreground">
+      <section className="bg-hero px-6 py-14 text-center text-primary-foreground md:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold md:text-4xl">Transforme sua maneira de estudar e registrar os cuidados de enfermagem!</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">Transforme sua maneira de estudar e registrar os cuidados de enfermagem!</h2>
           <p className="mt-4 text-lg text-primary-foreground/80">Tenha mais organização e praticidade para aprender SAE e Anotações de Enfermagem.</p>
-          <div className="mt-8"><Cta href={CHECKOUT_URL}>QUERO GARANTIR MEU ACESSO</Cta></div>
+          <div className="mt-8 flex flex-col items-center">
+            <Cta href={CHECKOUT_URL}>QUERO GARANTIR MEU ACESSO</Cta>
+            <Recusa dark />
+          </div>
         </div>
         <footer className="mx-auto mt-16 max-w-3xl border-t border-primary-foreground/15 pt-8 text-sm text-primary-foreground/60">
           <p>Material educativo complementar. Não substitui formação profissional, avaliação clínica, legislação, protocolos institucionais ou julgamento profissional.</p>

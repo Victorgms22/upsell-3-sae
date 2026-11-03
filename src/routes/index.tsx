@@ -178,23 +178,26 @@ function Index() {
               </ul>
               <div className="mt-8 border-t pt-6 text-center">
                 <p className="text-muted-foreground line-through">De R$ 59,90</p>
-                <p className="font-display text-5xl font-extrabold text-primary">R$ 12,90</p>
+                <p className="font-display text-4xl font-extrabold text-primary sm:text-5xl">R$ 12,90</p>
                 <p className="mt-1 text-sm text-muted-foreground">Pagamento único</p>
-                <div className="mt-6"><Cta href={CHECKOUT_URL}>QUERO ACESSAR O COMBO AGORA</Cta></div>
+                <div className="mt-6 flex flex-col items-center">
+                  <Cta href={CHECKOUT_URL}>QUERO ACESSAR O COMBO AGORA</Cta>
+                  <Recusa />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-14 md:py-20">
         <div className="mx-auto max-w-5xl">
           <Heading title="Sua compra com tranquilidade" />
           <CardGrid items={garantia} cols="lg:grid-cols-3" />
         </div>
       </section>
 
-      <section className="px-6 pb-20">
+      <section className="px-6 pb-14 md:pb-20">
         <div className="mx-auto max-w-3xl">
           <Heading title="Dúvidas frequentes" />
           <Accordion type="single" collapsible className="space-y-3">
@@ -208,11 +211,14 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-hero px-6 py-20 text-center text-primary-foreground">
+      <section className="bg-hero px-6 py-14 text-center text-primary-foreground md:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold md:text-4xl">Transforme sua maneira de estudar e registrar os cuidados de enfermagem!</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">Transforme sua maneira de estudar e registrar os cuidados de enfermagem!</h2>
           <p className="mt-4 text-lg text-primary-foreground/80">Tenha mais organização e praticidade para aprender SAE e Anotações de Enfermagem.</p>
-          <div className="mt-8"><Cta href={CHECKOUT_URL}>QUERO GARANTIR MEU ACESSO</Cta></div>
+          <div className="mt-8 flex flex-col items-center">
+            <Cta href={CHECKOUT_URL}>QUERO GARANTIR MEU ACESSO</Cta>
+            <Recusa dark />
+          </div>
         </div>
         <footer className="mx-auto mt-16 max-w-3xl border-t border-primary-foreground/15 pt-8 text-sm text-primary-foreground/60">
           <p>Material educativo complementar. Não substitui formação profissional, avaliação clínica, legislação, protocolos institucionais ou julgamento profissional.</p>

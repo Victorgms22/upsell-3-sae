@@ -136,7 +136,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading title="O que você vai receber?" sub="Um conteúdo organizado para ajudar você a compreender e aplicar os principais processos da assistência de enfermagem." />
           <CardGrid items={conteudo} cols="lg:grid-cols-3" />
@@ -144,21 +144,21 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-soft px-6 py-20">
+      <section className="bg-soft px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading title="Por que estudar com este material?" sub="Mais organização, praticidade e segurança para desenvolver seus conhecimentos em enfermagem." />
           <CardGrid items={beneficios} cols="lg:grid-cols-4" />
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading title="Para quem é este material?" sub="Desenvolvido para quem deseja aprender, revisar e aprimorar seus conhecimentos em enfermagem." />
           <CardGrid items={publico} cols="lg:grid-cols-3" />
         </div>
       </section>
 
-      <section id="oferta" className="bg-hero px-6 py-20 text-primary-foreground">
+      <section id="oferta" className="bg-hero px-4 py-14 text-primary-foreground sm:px-6 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Heading light title="Tenha acesso ao material completo!" sub="Tudo o que você precisa para estudar SAE e Anotações de Enfermagem em um só lugar." />
           <div className="grid items-center gap-10 md:grid-cols-2">

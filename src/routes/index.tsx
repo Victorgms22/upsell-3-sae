@@ -163,7 +163,7 @@ function Index() {
               </ul>
               <div className="mt-8 border-t pt-6 text-center">
                 <p className="text-muted-foreground line-through">De R$ 59,90</p>
-                <p className="font-display text-5xl font-extrabold text-primary">R$ 27,99</p>
+                <p className="font-display text-5xl font-extrabold text-primary">R$ 12,90</p>
                 <p className="mt-1 text-sm text-muted-foreground">Pagamento único</p>
                 <div className="mt-6"><Cta href={CHECKOUT_URL}>QUERO ACESSAR O COMBO AGORA</Cta></div>
               </div>
